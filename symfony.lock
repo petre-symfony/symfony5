@@ -86,6 +86,18 @@
     "doctrine/reflection": {
         "version": "v1.0.0"
     },
+    "easycorp/easy-log-handler": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "70062abc2cd58794d2a90274502f81b55cd9951b"
+        },
+        "files": [
+            "config/packages/dev/easy_log_handler.yaml"
+        ]
+    },
     "egulias/email-validator": {
         "version": "2.1.11"
     },
@@ -163,6 +175,9 @@
     },
     "michelf/php-markdown": {
         "version": "1.8.0"
+    },
+    "monolog/monolog": {
+        "version": "1.25.3"
     },
     "mtdowling/jmespath.php": {
         "version": "2.4.0"
@@ -323,6 +338,9 @@
     "symfony/dom-crawler": {
         "version": "v4.3.5"
     },
+    "symfony/dotenv": {
+        "version": "v4.4.4"
+    },
     "symfony/error-handler": {
         "version": "v4.4.4"
     },
@@ -406,6 +424,23 @@
     },
     "symfony/mime": {
         "version": "v4.3.4"
+    },
+    "symfony/monolog-bridge": {
+        "version": "v4.4.4"
+    },
+    "symfony/monolog-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "877bdb4223245783d00ed1f7429aa7ebc606d914"
+        },
+        "files": [
+            "config/packages/dev/monolog.yaml",
+            "config/packages/prod/monolog.yaml",
+            "config/packages/test/monolog.yaml"
+        ]
     },
     "symfony/options-resolver": {
         "version": "v4.1.11"
