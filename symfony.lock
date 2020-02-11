@@ -303,13 +303,17 @@
         "version": "v4.1.11"
     },
     "symfony/console": {
-        "version": "3.3",
+        "version": "4.4",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
-            "version": "3.3",
-            "ref": "0fa049c19069a65f52c1c181d64be3de672c1504"
-        }
+            "version": "4.4",
+            "ref": "ea8c0eda34fda57e7d5cd8cbd889e2a387e3472c"
+        },
+        "files": [
+            "bin/console",
+            "config/bootstrap.php"
+        ]
     },
     "symfony/contracts": {
         "version": "v1.0.2"
