@@ -4,8 +4,8 @@ namespace App\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Mailer\Event\MessageEvent;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Email;
-use Symfony\Component\Mime\NamedAddress;
 
 class SetFromListener implements EventSubscriberInterface {
 	public static function getSubscribedEvents() {
@@ -20,6 +20,6 @@ class SetFromListener implements EventSubscriberInterface {
 			return;
 		}
 
-		$email->from(new NamedAddress('alienmailcarrier@example.com', 'The Space Bar'));
+		$email->from(new Address('alienmailcarrier@example.com', 'The Space Bar'));
 	}
 }

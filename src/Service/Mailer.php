@@ -6,7 +6,7 @@ use App\Entity\User;
 use Knp\Snappy\Pdf;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\NamedAddress;
+use Symfony\Component\Mime\Address;
 use Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface;
 use Twig\Environment;
 
@@ -25,7 +25,7 @@ class Mailer {
 
 	public function sendWelcomeMessage(User $user): TemplatedEmail {
 		$email = (new TemplatedEmail())
-			->to(new NamedAddress($user->getEmail(), $user->getFirstName()))
+			->to(new Address($user->getEmail(), $user->getFirstName()))
 			->subject('Welcome to the Space Bar!')
 			->htmlTemplate('email/welcome.html.twig')
 			->context([
@@ -46,7 +46,7 @@ class Mailer {
 		$pdf = $this->pdf->getOutputFromHtml($html);
 
 		$email = (new TemplatedEmail())
-			->to(new NamedAddress($author->getEmail(), $author->getFirstName()))
+			->to(new Address($author->getEmail(), $author->getFirstName()))
 			->subject('Your weekly report on the Space Bar!')
 			->htmlTemplate('email/author-weekly-report.html.twig')
 			->context([
