@@ -207,7 +207,7 @@
         }
     },
     "php": {
-        "version": "7.1.3"
+        "version": "7.2.5"
     },
     "php-http/client-common": {
         "version": "1.9.1"
