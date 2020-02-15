@@ -24,7 +24,8 @@ class ArticleController extends AbstractController {
 	/**
 	 * @Route("/", name="app_homepage")
 	 */
-	public function homepage(ArticleRepository $repository) {
+	public function homepage(ArticleRepository $repository, $mailerDsn) {
+		dd($mailerDsn);
 		$articles = $repository->findAllPublishedOrderedByNewest();
 
 		return $this->render('article/homepage.html.twig', [
