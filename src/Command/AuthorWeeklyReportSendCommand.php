@@ -54,5 +54,7 @@ class AuthorWeeklyReportSendCommand extends Command {
 		$io->progressFinish();
 
 		$io->success('Weekly reports were sent to authors!');
+		
+		return 0;
 	}
 }
