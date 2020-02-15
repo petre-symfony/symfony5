@@ -26,16 +26,12 @@ class Article {
 	 * @ORM\Column(type="integer")
 	 */
 	private $id;
-
-	/**
-	 * @ORM\Column(type="string", length=255)
-	 */
+	
 	private $title;
 	// @Assert\NotBlank(message="Get creative and think of a title!")
 
 	/**
 	 * @ORM\Column(type="string", length=100, unique=true)
-	 * @Gedmo\Slug(fields={"title"})
 	 */
 	private $slug;
 
