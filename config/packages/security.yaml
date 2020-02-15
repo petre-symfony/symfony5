@@ -1,8 +1,12 @@
 security:
   encoders:
+    legacy_bcrypt:
+      algorithm: bcrypt
+
     App\Entity\User:
-      # algorithm: bcrypt
       algorithm: sodium
+      migrate_from:
+        - legacy_bcrypt
 
   # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
   providers:
