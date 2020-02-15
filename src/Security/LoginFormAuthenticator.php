@@ -15,9 +15,10 @@ use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Component\Security\Guard\Authenticator\AbstractFormLoginAuthenticator;
+use Symfony\Component\Security\Guard\PasswordAuthenticatedInterface;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
-class LoginFormAuthenticator extends AbstractFormLoginAuthenticator {
+class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements PasswordAuthenticatedInterface {
 	use TargetPathTrait;
 
 	private $userRepository;
@@ -62,6 +63,10 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator {
 		return $this->userRepository->findOneBy(['email' => $credentials['email']]);
 	}
 
+	public function getPassword($credentials): ?string {
+		return $credentials['password'];
+	}
+	
 	public function checkCredentials($credentials, UserInterface $user) {
 		return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
 	}
