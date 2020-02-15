@@ -131,6 +131,9 @@
     "guzzlehttp/psr7": {
         "version": "1.5.2"
     },
+    "http-interop/http-factory-guzzle": {
+        "version": "1.0.0"
+    },
     "imagine/imagine": {
         "version": "v0.7.1"
     },
